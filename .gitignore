@@ -14,12 +14,3 @@ session.lock
 *.gz
 .DS_Store
 Thumbs.db
-
-# Ignore future world region and entity data
-region/
-DIM1/
-DIM-1/
-entities/
-poi/
-data/
-level.dat*
