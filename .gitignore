@@ -14,3 +14,5 @@ session.lock
 *.gz
 .DS_Store
 Thumbs.db
+
+level.dat_old
