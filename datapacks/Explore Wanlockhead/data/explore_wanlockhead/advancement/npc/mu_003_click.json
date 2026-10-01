@@ -1,0 +1,16 @@
+{
+  "criteria": {
+    "click": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:interaction",
+          "nbt": "{Tags:[\"NPC-MU-003_hit\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "explore_wanlockhead:npc/mu_003/click"
+  }
+}
