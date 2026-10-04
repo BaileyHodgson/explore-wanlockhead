@@ -7,12 +7,16 @@ execute as @s[scores={npc_seq=11,npc_timer=400}] run tellraw @s {"text":"\n\n[Wa
 execute as @s[scores={npc_seq=11,npc_timer=500}] run tellraw @s {"text":"\n\n[Wanlockhead Guide] We hope you enjoy your time here, see you later!","color":"yellow"}
 execute as @s[scores={npc_seq=11,npc_timer=501}] run scoreboard players set @s mu_001_state 1
 execute as @s[scores={npc_seq=11,npc_timer=501}] run tag @s remove mu_001_bound
+execute as @s[scores={npc_seq=11,npc_timer=501}] run data modify entity @e[type=text_display,tag=NPC-MU-001_marker,sort=nearest,limit=1] text set value {text:"...",color:"yellow",bold:true}
 execute as @s[scores={npc_seq=11,npc_timer=502..}] run scoreboard players reset @s npc_seq
 
 # --- Sequence 12: Repeat Visit ---
 execute as @s[scores={npc_seq=12,npc_timer=2}] run tellraw @s {"text":"\n\n[Wanlockhead Guide] Have you got all the tokens? Keep exploring the village of Wanlockhead!","color":"yellow"}
+execute as @s[scores={npc_seq=12,npc_timer=99}] run data modify entity @e[type=text_display,tag=NPC-MU-001_marker,sort=nearest,limit=1] text set value {text:"...",color:"yellow",bold:true}
 execute as @s[scores={npc_seq=12,npc_timer=100..}] run scoreboard players reset @s npc_seq
 
 # --- Sequence 13: All Tokens Collected ---
 execute as @s[scores={npc_seq=13,npc_timer=2}] run tellraw @s {"text":"\n\n[Wanlockhead Guide] Thanks for playing the Minecraft Experience of Wanlockhead. Hopefully we can see you in the village some day!","color":"yellow"}
+execute as @s[scores={npc_seq=13,npc_timer=99}] run scoreboard players set @s mu_001_state 2
+execute as @s[scores={npc_seq=13,npc_timer=99}] run data modify entity @e[type=text_display,tag=NPC-MU-001_marker,sort=nearest,limit=1] text set value {text:"...",color:"yellow",bold:true}
 execute as @s[scores={npc_seq=13,npc_timer=100..}] run scoreboard players reset @s npc_seq

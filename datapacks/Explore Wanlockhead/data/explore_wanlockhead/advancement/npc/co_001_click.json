@@ -1,0 +1,16 @@
+{
+  "criteria": {
+    "click": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:interaction",
+          "nbt": "{Tags:[\"NPC-CO-001_hit\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "explore_wanlockhead:npc/co_001/click"
+  }
+}
