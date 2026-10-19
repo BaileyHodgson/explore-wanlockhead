@@ -1,5 +1,6 @@
 # Allow this advancement to fire again on the next click
 advancement revoke @s only explore_wanlockhead:npc/mu_001_click
+execute if score @s npc_seq matches 11..13 run return run function explore_wanlockhead:npc/advance
 tag @s add mu_001_interacted
 
 # Ignore if player is already in a dialogue
@@ -14,3 +15,4 @@ execute if entity @s[tag=has_all_tokens] run data modify entity @e[type=text_dis
 execute unless entity @s[tag=has_all_tokens] if score @s mu_001_state matches 1.. run data modify entity @e[type=text_display,tag=NPC-MU-001_marker,sort=nearest,limit=1] text set value {text:"...",color:"yellow",bold:true}
 execute unless entity @s[tag=has_all_tokens] unless score @s mu_001_state matches 1.. run data modify entity @e[type=text_display,tag=NPC-MU-001_marker,sort=nearest,limit=1] text set value {text:"...",color:"green",bold:true}
 scoreboard players set @s npc_timer 1
+function explore_wanlockhead:npc/mu_001/dialogue

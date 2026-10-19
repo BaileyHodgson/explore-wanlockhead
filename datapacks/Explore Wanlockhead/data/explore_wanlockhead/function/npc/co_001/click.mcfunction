@@ -1,4 +1,5 @@
 advancement revoke @s only explore_wanlockhead:npc/co_001_click
+execute if score @s npc_seq matches 61..66 run return run function explore_wanlockhead:npc/advance
 tag @s add co_001_interacted
 execute if score @s npc_seq matches 1.. run return 0
 execute if score @s co_001_state matches 6.. unless entity @e[type=interaction,tag=NPC-CO-001_hit,x=-396.5,y=48,z=-319.5,distance=..0.1] run return 0
@@ -17,3 +18,4 @@ execute unless score @s npc_seq matches 1.. run return 0
 execute if score @s co_001_state matches 6.. run data modify entity @e[type=text_display,tag=NPC-CO-001_marker,sort=nearest,limit=1] text set value {text:"...",color:"yellow",bold:true}
 execute unless score @s co_001_state matches 6.. run data modify entity @e[type=text_display,tag=NPC-CO-001_marker,sort=nearest,limit=1] text set value {text:"...",color:"green",bold:true}
 scoreboard players set @s npc_timer 1
+function explore_wanlockhead:npc/co_001/dialogue

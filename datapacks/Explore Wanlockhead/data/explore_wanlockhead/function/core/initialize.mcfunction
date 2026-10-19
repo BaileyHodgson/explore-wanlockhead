@@ -18,7 +18,7 @@ forceload add -396 -318
 # --- Wanlockhead Guide (NPC-MU-001) ---
 summon mannequin -154.5 56 54.5 {Team:"museum_npcs",Tags:["museum_system","NPC-MU-001"],NoAI:1b,NoGravity:1b,Invulnerable:1b,profile:{texture:"entity/player/wide/sunny",model:"wide"}}
 summon interaction -154.5 56 54.5 {Tags:["museum_system","NPC-MU-001_hit"],width:1.5f,height:2.2f}
-summon text_display -154.5 58.5 54.5 {Tags:["museum_system","NPC-MU-001_marker"],billboard:"center",text:{text:"!",color:"red",bold:true},transformation:{scale:[2.0f,2.0f,2.0f],translation:[0.0f,0.0f,0.0f],left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f]}}
+summon text_display -154.5 58.5 54.5 {Tags:["museum_system","NPC-MU-001_marker"],billboard:"center",text:{text:"\uE010"},background:0,transformation:{scale:[2.0f,2.0f,2.0f],translation:[0.0f,0.0f,0.0f],left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f]}}
 
 # --- Museum Guide 1 (NPC-MU-002) ---
 summon mannequin -136.5 3 54.5 {Team:"museum_npcs",Tags:["museum_system","NPC-MU-002"],NoAI:1b,NoGravity:1b,Invulnerable:1b,profile:{texture:"entity/player/slim/efe",model:"slim"}}
@@ -84,3 +84,14 @@ summon text_display -401.5 9.25 -316.5 {Tags:["museum_system","DOOR-CO-003_marke
 # RESET PLAYER
 tp @a -166.40 56.00 54.34 -90 0
 gamemode adventure @a
+clear @a
+effect give @a blindness infinite 0 true
+execute as @a run attribute @s movement_speed base set 0
+execute as @a run attribute @s jump_strength base set 0
+title @a times 20 100 20
+title @a subtitle {text:"Minecraft Experience",color:"gold"}
+title @a title {text:"Wanlockhead",color:"yellow"}
+schedule clear explore_wanlockhead:core/tutorial/move_text
+schedule clear explore_wanlockhead:core/tutorial/chat_text
+schedule clear explore_wanlockhead:core/tutorial/image
+schedule function explore_wanlockhead:core/tutorial/move_text 5s replace

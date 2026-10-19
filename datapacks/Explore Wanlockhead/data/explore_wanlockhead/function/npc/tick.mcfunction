@@ -1,18 +1,11 @@
 # ==========================================
-# 1. TIMER MANAGEMENT
+# 1. CLICK-TO-ADVANCE DIALOGUE
 # ==========================================
-execute as @a[scores={npc_timer=1..}] run scoreboard players add @s npc_timer 1
+execute as @a[scores={npc_next=1..}] if score @s npc_next = @s npc_prompt run function explore_wanlockhead:npc/advance
+scoreboard players reset @a npc_next
+scoreboard players enable @a npc_next
 execute as @a unless score @s npc_seq matches 1.. run scoreboard players reset @s npc_timer
-
-# ==========================================
-# 2. DIALOGUE DISPATCH
-# ==========================================
-execute as @a[scores={npc_timer=1..}] run function explore_wanlockhead:npc/mu_001/dialogue
-execute as @a[scores={npc_timer=1..}] run function explore_wanlockhead:npc/mu_002/dialogue
-execute as @a[scores={npc_timer=1..}] run function explore_wanlockhead:npc/mu_003/dialogue
-execute as @a[scores={npc_timer=1..}] run function explore_wanlockhead:npc/mi_001/dialogue
-execute as @a[scores={npc_timer=1..}] run function explore_wanlockhead:npc/li_001/dialogue
-execute as @a[scores={npc_timer=1..}] run function explore_wanlockhead:npc/co_001/dialogue
+execute as @a unless score @s npc_seq matches 1.. run scoreboard players reset @s npc_prompt
 
 # Make each loaded guide face the nearest nearby player.
 function explore_wanlockhead:npc/look_at_player
