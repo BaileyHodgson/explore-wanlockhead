@@ -16,3 +16,14 @@ session.lock
 Thumbs.db
 
 level.dat_old
+
+# Ignore Minecraft world data (root-level directories only)
+/region/
+/entities/
+/poi/
+/DIM-1/
+/DIM1/
+/data/
+
+# Ignore world metadata
+/level.dat

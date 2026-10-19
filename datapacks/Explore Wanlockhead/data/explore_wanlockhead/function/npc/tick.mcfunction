@@ -17,6 +17,11 @@ execute as @a[scores={npc_timer=1..}] run function explore_wanlockhead:npc/co_00
 # Make each loaded guide face the nearest nearby player.
 function explore_wanlockhead:npc/look_at_player
 
+# Per-player beacon-like beams remain until that player starts each guide dialogue.
+execute as @a at @e[type=mannequin,tag=NPC-MI-001,limit=1] unless score @s mi_001_state matches 1.. run particle minecraft:end_rod ~ ~65 ~ 0.4 20 0.4 0 40 force @s
+execute as @a at @e[type=mannequin,tag=NPC-LI-001,limit=1] unless score @s li_001_state matches 1.. run particle minecraft:end_rod ~ ~65 ~ 0.4 20 0.4 0 40 force @s
+execute as @a at @e[type=mannequin,tag=NPC-CO-001,limit=1] unless score @s co_001_state matches 1.. run particle minecraft:end_rod ~ ~65 ~ 0.4 20 0.4 0 40 force @s
+
 # ==========================================
 # 3. PROXIMITY ALERTS AND BOUNDARY ENFORCEMENT
 # ==========================================

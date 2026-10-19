@@ -6,6 +6,15 @@ function explore_wanlockhead:core/reset
 worldborder center -181.5 -97.5
 worldborder set 510
 
+# --- Force Load Chunks ---
+forceload add -155 54
+forceload add -139 44
+forceload add -139 51
+forceload add -38 2
+forceload add -38 -3
+forceload add -397 -322
+forceload add -396 -318
+
 # --- Wanlockhead Guide (NPC-MU-001) ---
 summon mannequin -154.5 56 54.5 {Team:"museum_npcs",Tags:["museum_system","NPC-MU-001"],NoAI:1b,NoGravity:1b,Invulnerable:1b,profile:{texture:"entity/player/wide/sunny",model:"wide"}}
 summon interaction -154.5 56 54.5 {Tags:["museum_system","NPC-MU-001_hit"],width:1.5f,height:2.2f}
